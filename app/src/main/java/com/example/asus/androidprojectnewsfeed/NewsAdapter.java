@@ -51,14 +51,15 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         String date;
         String str;
         str = articles.get(position).getPublishedAt();
-        date = str.substring(0,str.indexOf('T'));
+        Log.e("kobe",""+str);
+//        date = str.substring(str.indexOf('T'));
         time = str.substring(str.lastIndexOf('T')+1);
         Glide.with(mContext).load(articles.get(position).getUrlToImage()).into(holder.news_image);
         holder.news_title.setText(articles.get(position).getTitle());
         holder.news_desc.setText(articles.get(position).getDescription());
-        holder.date.setText(date);
-        Log.e("kobe",""+time);
-        holder.time.setText(time.substring(0,time.indexOf('Z')));
+     //   holder.date.setText(date);
+//        Log.e("kobe",""+time);
+//        holder.time.setText(time.substring(time.indexOf('Z')));
     }
 
     @Override
